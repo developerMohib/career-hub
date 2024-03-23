@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import Footer from "../Footer/Footer";
+import JobsCategory from "../JobsCategory/JobsCategory";
 import Navber from "../Navber/Navber";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <div className="maxWidth">
         <Navber> </Navber>
         <Banner> </Banner>
+        <JobsCategory> </JobsCategory>
       </div>
       <Footer> </Footer>
     </div>

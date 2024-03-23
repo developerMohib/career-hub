@@ -1,9 +1,10 @@
-
+import { NavLink } from "react-router-dom";
+import './Navber.css'
 const Navber = () => {
     const links = <>
-    <li> <a href="#">Item 1</a> </li>
-    <li> <a href="#">Item 2</a> </li>
-    <li> <a href="#">Item 3</a> </li>
+    <li> <NavLink> Statictics </NavLink> </li>
+    <li> <NavLink>Jobs</NavLink> </li>
+    <li> <NavLink> Applied Jobs </NavLink> </li>
     </>
   return (
     <div>
@@ -33,7 +34,7 @@ const Navber = () => {
                 {links}
             </ul>
           </div>
-          <a href="" className=" text-xl">daisyUI</a>
+          <a href="" className=" text-xl">Career Hub</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -41,7 +42,7 @@ const Navber = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a className="btn">Apply Now</a>
         </div>
       </div>
     </div>
