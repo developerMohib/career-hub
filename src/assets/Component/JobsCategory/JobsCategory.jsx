@@ -14,8 +14,9 @@ const JobsCategory = () => {
   console.log(jobs);
   return (
     <div>
-      <div>
-        <h3>this is from Jobs Category</h3>
+      <div className="w-2/5 mx-auto text-center my-10">
+        <h3 className="font-bold text-2xl">Job Category List</h3>
+        <p>Explore thousands of job opportunities with all the information you need. Its your futuren</p>
       </div>
       <div className="md:grid grid-cols-4 gap-5">
         {jobs.map((job) => ( 

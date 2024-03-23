@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import FeaturesJobs from "../FeaturesJobs/FeaturesJobs";
 import Footer from "../Footer/Footer";
 import JobsCategory from "../JobsCategory/JobsCategory";
 import Navber from "../Navber/Navber";
@@ -10,6 +11,7 @@ const Home = () => {
         <Navber> </Navber>
         <Banner> </Banner>
         <JobsCategory> </JobsCategory>
+        <FeaturesJobs> </FeaturesJobs>
       </div>
       <Footer> </Footer>
     </div>
