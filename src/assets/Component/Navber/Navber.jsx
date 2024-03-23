@@ -23,17 +23,21 @@ const Navber = () => {
  console.log(theme, 'click value')
   const links = (
     <>
-      <li>
+    <li>
         {" "}
-        <NavLink> Statictics </NavLink>{" "}
+        <NavLink to="/" > Home </NavLink>{" "}
       </li>
       <li>
         {" "}
-        <NavLink>Jobs</NavLink>{" "}
+        <NavLink to="/statictics" > Statictics </NavLink>{" "}
       </li>
       <li>
         {" "}
-        <NavLink> Applied Jobs </NavLink>{" "}
+        <NavLink to="/jobs" >Jobs</NavLink>{" "}
+      </li>
+      <li>
+        {" "}
+        <NavLink to= "/applied-jobs" > Applied Jobs </NavLink>{" "}
       </li>
     </>
   );

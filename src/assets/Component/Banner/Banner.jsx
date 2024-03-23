@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <div>
-      <div className="hero">
+      <div className="hero justify-between">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <a className="userHero md:flex justify-end" href="https://ibb.co/xjgFKBk">
             <img className="md:w-1/2"

@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import FeaturesJobs from "../FeaturesJobs/FeaturesJobs";
 import Footer from "../Footer/Footer";
@@ -10,8 +11,9 @@ const Home = () => {
       <div className="maxWidth">
         <Navber> </Navber>
         <Banner> </Banner>
-        <JobsCategory> </JobsCategory>
         <FeaturesJobs> </FeaturesJobs>
+        <JobsCategory> </JobsCategory>
+        <Outlet> </Outlet>
       </div>
       <Footer> </Footer>
     </div>

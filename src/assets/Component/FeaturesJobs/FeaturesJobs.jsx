@@ -1,3 +1,5 @@
+import AllJobs from "../AllJobs/AllJobs";
+
 const FeaturesJobs = () => {
   return (
     <div>
@@ -8,6 +10,7 @@ const FeaturesJobs = () => {
           need. Its your futuren
         </p>
       </div>
+        <AllJobs> </AllJobs>
     </div>
   );
 };
