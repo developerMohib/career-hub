@@ -12,8 +12,8 @@ import AppliedJobs from './assets/Component/AppliedJobs/AppliedJobs.jsx';
 import Statictics from './assets/Component/Statictics/Statictics.jsx';
 import Root from './assets/Component/Root/Root.jsx';
 import AllJobs from './assets/Component/AllJobs/AllJobs.jsx';
-import Blog from './assets/Component/Blog/Blog.jsx';
 import JobDetails from './assets/Component/JobsDetails/JobDetails.jsx';
+import Blogs from './assets/Component/Blogs/Blogs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,13 +40,14 @@ const router = createBrowserRouter([
         element: <Statictics> </Statictics>
       },
       {
-        path: "/blog",
-        element: <Blog> </Blog>
-      },
-      {
         path: "/job/:id",
         element: <JobDetails> </JobDetails>,
         loader: () => fetch(`https://raw.githubusercontent.com/developerMohib/career-hub-json-jobs/master/job-json-added` )
+      },
+      {
+        path: "/blogs",
+        element: <Blogs> </Blogs>
+
       }
     ]
   },

@@ -34,7 +34,8 @@ const Navber = () => {
       <li> <NavLink to="/jobs" >Jobs</NavLink> </li>
       <li> <NavLink to="/statictics" > Statictics </NavLink> </li>
       <li> <NavLink to= "/applied-jobs" > Applied Jobs </NavLink>  </li>
-      <li> <NavLink to= "/blog" > Blog </NavLink>  </li>
+      {/* <li> <NavLink to= "/blog" > Blog </NavLink>  </li> */}
+      <li> <NavLink to= "/blogs" > Blogs </NavLink>  </li>
     </>
   );
   return (
