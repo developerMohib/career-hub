@@ -21,10 +21,33 @@ const JobDetails = () => {
   const [employ, setEmploy] = useState({});
 
 
-  const handleApplyJobs = () => {
-        setApplyJob( parseInt(id) )
+//   const handleApplyJobs = () => {
+//         const test = setApplyJob( id );
+
+//         console.log( typeof test , 'form job details');
+
+//         toast("You Have Applied Successfully!");
+//   }
+
+
+
+const handleApplyJobs = () => {
+    const success = setApplyJob(id);
+
+    console.log(typeof success, 'from job details');
+
+    if (success) {
         toast("You Have Applied Successfully!");
-  }
+    } else {
+        // Handle case where the job was not applied (perhaps it already existed)
+        console.log("Job already applied!");
+        toast("Job already applied!");
+    }
+}
+
+
+
+
 
   useEffect(() => {
     fetch(
@@ -33,14 +56,14 @@ const JobDetails = () => {
       .then((res) => res.json())
       .then((data) => setCakri(data));
   }, []);
-  console.log(cakri);
+//   console.log(cakri);
 
   useEffect(() => {
     const parId = parseInt(id);
     // const employ = cakri.find(employ => employ);
     const employ = cakri.find((employ) => employ.id == parId);
-    console.log(employ);
-    console.log(employ?.job_title);
+    // console.log(employ);
+    // console.log(employ?.job_title);
     // console.log(employ.id)
     if (employ) {
       setEmploy(employ);

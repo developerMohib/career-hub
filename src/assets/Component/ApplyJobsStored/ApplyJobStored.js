@@ -9,9 +9,19 @@ const getApplyJob = () => {
 }
 const setApplyJob = (id) =>{
     const setApplyJobs = getApplyJob( );
-    const exist = setApplyJobs.find(jobID => jobID.id === id);
+    console.log(setApplyJobs, 'from aplied page');
+
+    // const intId = parseInt(id);
+
+    // console.log(typeof id, id, 'and' ,typeof(intId), intId, 'from aplied page');
+
+    const exist = setApplyJobs.find(jobID => jobID === id);
+    // const exist = setApplyJobs.find(jobID => jobID);
+
+    // console.log( typeof exist, exist, 'aplied page');
+
     if(!exist){
-        setApplyJobs.push(id)
+        setApplyJobs.push(id);
         localStorage.setItem('job-applied' , JSON.stringify(setApplyJobs));
     }
 }

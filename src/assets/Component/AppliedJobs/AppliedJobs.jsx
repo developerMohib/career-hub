@@ -8,7 +8,7 @@ const AppliedJobs = () => {
     // console.log(jobs , 'applied jobs');
     // console.log( Array.isArray(jobs , 'applied jobs') )
 
-    const [ jobs , setJobs ] = useState();
+    const [ jobs , setJobs ] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,10 +19,18 @@ const AppliedJobs = () => {
     
         fetchData();
 
+
+
+
+        // fetch('https://raw.githubusercontent.com/developerMohib/career-hub-json-jobs/master/job-json-added')
+        // .then(res => res.json())
+        // .then(data => setJobs(data))
+        
     },[])
+    console.log(jobs, 'not async');
 
     console.log( Array.isArray(jobs), "paici", jobs)
-    
+
 
     return (
         <div>
