@@ -32,7 +32,8 @@ const JobDetails = () => {
 
 
 const handleApplyJobs = () => {
-    const success = setApplyJob(id);
+    const parId = parseInt(id)
+    const success = setApplyJob(parId);
 
     console.log(typeof success, 'from job details');
 
