@@ -11,16 +11,20 @@ const JobsCategory = () => {
       .then((data) => setJobs(data));
     //   .catch((error) => console.error(error));
   }, []);
-  console.log(jobs);
+  // console.log(jobs);
   return (
+    
     <div>
-      <div className="w-2/5 mx-auto text-center my-10 bg-red-400">
+      
+      <div className="w-2/5 mx-auto text-center my-10 ">
         <h3 className="font-bold text-2xl">Job Category List</h3>
         <p>Explore thousands of job opportunities with all the information you need. Its your futuren</p>
       </div>
+
       <div className="md:grid grid-cols-4 gap-5">
         {jobs.map((job) => ( 
           <div key={job.id} className="card bg-neutral text-neutral-content">
+            <p> { job.logo } </p>
           <div className="card-body items-center text-center">
             <h2 className="card-title">{job.category_name}</h2>
             <p>{job.availability}</p>

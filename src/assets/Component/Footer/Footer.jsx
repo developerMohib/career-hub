@@ -2,7 +2,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div>
-      <footer className="myWidth p-10 bg-base-200 text-base-content">
+      <footer className="myWidth p-10 bg-base-300 text-base-content">
         <div className="myFooter md:grid grid-cols-4 border-b-[1px] border-gray-300">
           <aside className="text-center">
             <svg
@@ -44,7 +44,7 @@ const Footer = () => {
           </nav>
         </div>
         <div>
-          <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+          <footer className="footer px-10 py-4 border-t bg-base-300 text-base-content border-base-300">
             <aside className="items-center grid-flow-col">
               <svg
                 width="24"

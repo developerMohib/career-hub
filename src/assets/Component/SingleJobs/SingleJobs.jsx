@@ -26,8 +26,7 @@ const SingleJobs = ({ job }) => {
             <p>{company_name}</p>
             <div>
               <button className="btn btn-outline mx-1">
-                {" "}
-                {remote_or_onsite}{" "}
+                {remote_or_onsite}
               </button>
               <button className="btn btn-outline mx-1"> {job_type} </button>
             </div>
@@ -36,7 +35,7 @@ const SingleJobs = ({ job }) => {
               <p className="flex gap-2 items-center" > <CiDollar /> {salary} </p>
             </div>
             <div className="card-actions">
-                <Link to={`/job/:${id}`}>
+                <Link to={`/job/${id}`}>
                 <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white">
                     View Details
                 </button>

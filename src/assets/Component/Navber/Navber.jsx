@@ -5,10 +5,17 @@ const Navber = () => {
 
   const [theme, setTheme] = useState('light');
   useEffect(() => {
-    localStorage.setItem('theme', theme);
     const localTheme = localStorage.getItem('theme');
-    document.querySelector('html').setAttribute("data-theme", localTheme)
-},[theme])
+    // const newTheme = theme === 'light'? 'light' : localTheme;
+    setTheme(localTheme);
+},[])
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.querySelector('html').setAttribute("data-theme", theme);
+  },[theme])
+
+
   const handleTheme = (e) =>{
     const value = e.target.checked;
     // console.log(value, 'click value');
@@ -23,22 +30,11 @@ const Navber = () => {
  console.log(theme, 'click value')
   const links = (
     <>
-    <li>
-        {" "}
-        <NavLink to="/" > Home </NavLink>{" "}
-      </li>
-      <li>
-        {" "}
-        <NavLink to="/statictics" > Statictics </NavLink>{" "}
-      </li>
-      <li>
-        {" "}
-        <NavLink to="/jobs" >Jobs</NavLink>{" "}
-      </li>
-      <li>
-        {" "}
-        <NavLink to= "/applied-jobs" > Applied Jobs </NavLink>{" "}
-      </li>
+      <li><NavLink to="/" > Home </NavLink> </li>
+      <li> <NavLink to="/jobs" >Jobs</NavLink> </li>
+      <li> <NavLink to="/statictics" > Statictics </NavLink> </li>
+      <li> <NavLink to= "/applied-jobs" > Applied Jobs </NavLink>  </li>
+      <li> <NavLink to= "/blog" > Blog </NavLink>  </li>
     </>
   );
   return (
