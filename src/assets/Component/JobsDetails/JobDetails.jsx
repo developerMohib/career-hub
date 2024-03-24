@@ -1,8 +1,9 @@
-// import { useEffect, useState } from "react";
-// import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { setApplyJob } from '../ApplyJobsStored/ApplyJobStored';
 
 const JobDetails = () => {
   // const loadedData = useLoaderData();
@@ -17,6 +18,12 @@ const JobDetails = () => {
 
   const [cakri, setCakri] = useState([]);
   const [employ, setEmploy] = useState({});
+
+
+  const handleApplyJobs = () => {
+        setApplyJob(id)
+        toast("You Have Applied Successfully!");
+  }
 
   useEffect(() => {
     fetch(
@@ -42,27 +49,48 @@ const JobDetails = () => {
 
   return (
     <div>
-        <div className="p-10">
-            <h3 className="text-2xl text-center font-semibold"> Job Details </h3>
+      <div className="p-10">
+        <h3 className="text-2xl text-center font-semibold"> Job Details </h3>
+      </div>
+      <div className="grid md:grid-cols-3 gap-5 my-10">
+        <div className="md:col-span-2 bg-base-300 p-10 rounded-lg space-y-2">
+          <p> <span className="text-2xl font-semibold"> Description : </span> {employ?.job_description} </p>
+          <p> <span className="text-2xl font-semibold">Responsibility : </span> {employ?.job_responsibility} </p>
+           <p> <span className="text-2xl font-semibold">Job Requirements : </span> {employ?.educational_requirements} </p>
+          <p> <span className="text-2xl font-semibold">Company Name : </span> {employ?.company_name} </p>
+          <p> <span className="text-2xl font-semibold">Job Status : </span> {employ?.remote_or_onsite} </p>
+          <p> <span className="text-2xl font-semibold">Location : </span> {employ?.location} </p>
+          <p> <span className="text-2xl font-semibold"> Job Type : </span> {employ?.job_type} </p>
+          <p> <span className="text-2xl font-semibold">Experience : </span> {employ?.experiences} </p>
         </div>
-        <div className="grid grid-cols-3">
-            <div className="col-span-2 bg-gray-400 p-5 rounded-lg">
-            <h3> {employ?.job_title} </h3>
-            <img src= {employ?.logo} alt="" />
-            <p> {employ?.company_name} </p>
-            <p> {employ?.remote_or_onsite} </p>
-            <p> {employ?.location} </p>
-            <p> {employ?.job_type} </p>
-            <p> {employ?.job_responsibility} </p>
-            <p> {employ?.job_description} </p>
-            <p> {employ?.experiences} </p>
-            <p> {employ?.educational_requirements} </p>
-            <p> {employ?.contact_information?.address} </p>
-            <p> {employ?.contact_information?.email} </p>
-            <p> {employ?.contact_information?.phone} </p>
+{/* ----------------------------- */}
+        <div className="bg-base-300 p-10 rounded-lg">
+
+          <div className="p-10 text-center">
+          <img src={employ?.logo} alt="" /> 
+            <h3 className="text-2xl font-semibold">
+              Job Details
+            </h3>
+          </div>
+
+            <div>
+                <h3 className="font-bold text-2xl text-center">  {employ?.job_title} </h3>
             </div>
-            <div className=""></div>
+            <div className=" py-10 ">
+                <h3 className="text-2xl font-semibold">
+                Contact Information 
+                </h3>
+                    
+                <p> <span className="text-2xl font-semibold">Phone : </span> {employ?.contact_information?.phone} </p>
+                <p> <span className="text-2xl font-semibold">Email : </span> {employ?.contact_information?.email} </p>
+                <p> <span className="text-2xl font-semibold">Address : </span> {employ?.contact_information?.address} </p>
+          </div>
+            <div className="text-center">
+                <button onClick={handleApplyJobs} className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white w-full hover:bg-gradient-to-tr border-none" >Apply Now</button>
+            </div>
         </div>
+      </div>
+      <ToastContainer />
     </div>
   );
 };
