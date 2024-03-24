@@ -11,6 +11,7 @@ const JobDetails = () => {
   // console.log( Array.isArray(allCakri) , 'all cakri is array or not ? ', (allCakri.length) );
 
   const { id } = useParams();
+  
   // const cakri = allCakri.find(cakri => cakri.id == id);
   // // const cakri = allCakri.find((cakri) => cakri.id == id);
   // console.log(cakri, id);
@@ -21,7 +22,7 @@ const JobDetails = () => {
 
 
   const handleApplyJobs = () => {
-        setApplyJob(id)
+        setApplyJob( parseInt(id) )
         toast("You Have Applied Successfully!");
   }
 

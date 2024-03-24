@@ -32,7 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path:"/applied-jobs",
-        element: <AppliedJobs> </AppliedJobs>
+        element: <AppliedJobs> </AppliedJobs>,
+        loader : () => fetch(`https://raw.githubusercontent.com/developerMohib/career-hub-json-jobs/master/job-json-added` )
       },
       {
         path: "/statictics",
