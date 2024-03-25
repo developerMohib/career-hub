@@ -1,49 +1,69 @@
 import { NavLink } from "react-router-dom";
 import "./Navber.css";
 import { useEffect, useState } from "react";
-const Navber = () => {
+import { FiMenu } from "react-icons/fi";
+import { RxCross1 } from "react-icons/rx";
 
-  const [theme, setTheme] = useState('light');
+const Navber = () => {
+  const [theme, setTheme] = useState("light");
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
-    const localTheme = localStorage.getItem('theme');
+    const localTheme = localStorage.getItem("theme");
     // const newTheme = theme === 'light'? 'light' : localTheme;
     setTheme(localTheme);
-},[])
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.querySelector('html').setAttribute("data-theme", theme);
-  },[theme])
+    localStorage.setItem("theme", theme);
+    document.querySelector("html").setAttribute("data-theme", theme);
+  }, [theme]);
 
-
-  const handleTheme = (e) =>{
+  const handleTheme = (e) => {
     const value = e.target.checked;
     // console.log(value, 'click value');
-    if(value){
-      setTheme("synthwave")
+    if (value) {
+      setTheme("synthwave");
+    } else {
+      setTheme("light");
     }
-    else{
-      setTheme("light")
-    }
-  }
-  
- console.log(theme, 'click value')
+  };
+
+  console.log(theme, "click value");
   const links = (
     <>
-      <li><NavLink to="/" > Home </NavLink> </li>
-      <li> <NavLink to="/jobs" >Jobs</NavLink> </li>
-      <li> <NavLink to="/statictics" > Statictics </NavLink> </li>
-      <li> <NavLink to= "/applied-jobs" > Applied Jobs </NavLink>  </li>
+      <li>
+        <NavLink to="/"> Home </NavLink>{" "}
+      </li>
+      <li>
+        {" "}
+        <NavLink to="/jobs">Jobs</NavLink>{" "}
+      </li>
+      <li>
+        {" "}
+        <NavLink to="/statictics"> Statictics </NavLink>{" "}
+      </li>
+      <li>
+        {" "}
+        <NavLink to="/applied-jobs"> Applied Jobs </NavLink>{" "}
+      </li>
       {/* <li> <NavLink to= "/blog" > Blog </NavLink>  </li> */}
-      <li> <NavLink to= "/blogs" > Blogs </NavLink>  </li>
+      <li>
+        {" "}
+        <NavLink to="/blogs"> Blogs </NavLink>{" "}
+      </li>
     </>
   );
   return (
     <div>
+      {/* <div className="text-2xl md:hidden" onClick={() => setOpen(!open)}>
+        {open === true ? <RxCross1 /> : <FiMenu />}
+      </div> */}
+
       <div className="navbar bg-base-100 shadow-lg">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            {/* <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns=""
                 className="h-5 w-5"
@@ -58,17 +78,33 @@ const Navber = () => {
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
+            </div> */}
+
+
+            {/* <div className="text-2xl md:hidden" onClick={() => setOpen(!open)}>
+              {open === true ? <RxCross1 /> : <FiMenu />}
             </div>
+            
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className ={` menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ${open ? '' : 'hidden'} `}
             >
               {links}
-            </ul>
+            </ul> */}
           </div>
           <a href="" className=" text-xl">
             Career Hub
           </a>
+          <div className="text-2xl md:hidden" onClick={() => setOpen(!open)}>
+              {open === true ? <RxCross1 /> : <FiMenu />}
+            </div>
+
+            <ul
+              tabIndex={0}
+                className ={` absolute top-10 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ${open ? '' : 'hidden'} `}
+            >
+              {links}
+            </ul>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -81,7 +117,7 @@ const Navber = () => {
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
-            onChange={handleTheme}
+              onChange={handleTheme}
               type="checkbox"
               className="theme-controller"
               value="synthwave"
@@ -106,7 +142,6 @@ const Navber = () => {
             </svg>
           </label>
         </div>
-
       </div>
     </div>
   );
