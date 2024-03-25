@@ -12,17 +12,19 @@ const AppliedJobs = () => {
     const [ jobs , setJobs ] = useState([]);
     const [displyJob, setDisplayJobs] = useState([]);
 
+    console.log(jobs, 'all jobs from aplied jobs')
+
     const handleFiter = filterjob => {
         if(filterjob === 'all'){
             setDisplayJobs(jobs)
         }
         else if( filterjob === 'remote' ){
-            const remoteJob = jobs.filter(item => jobs.includes(item.remote_or_onsite === "Remote"));
+            const remoteJob = jobs.filter(item => item.remote_or_onsite === "Remote");
+            console.log(remoteJob , 'all filter') ;
             setDisplayJobs(remoteJob)
-            // console.log(remoteJob);
         }
         else if( filterjob === 'onsite' ){
-            const onsiteJob = jobs.filter(item => jobs.includes(item.remote_or_onsite === "Onsite"));
+            const onsiteJob = jobs.filter(item => item.remote_or_onsite === "Onsite");
             setDisplayJobs(onsiteJob)
         }
     }
