@@ -4,8 +4,7 @@ const Blog = ( {blog} ) => {
     const {logo,job_title,location,salary} = blog;
 
     return (
-        <div>
-            
+        <div> 
       <div>
         <div className="card bg-base-100 shadow-xl">
           <figure>

@@ -17,7 +17,7 @@ const AllJobs = () => {
     setLoadJobs(allJobs.length)
   };
 
-  // console.log(allJobs, "all jobs ");
+  console.log(allJobs, "all jobs ");
 
   return (
     <div>
@@ -31,7 +31,7 @@ const AllJobs = () => {
       </div>
 
       <div className={ loadJobs === allJobs.length && "hidden"}>
-        <div className=" card-actions justify-center ">
+        <div className=" card-actions justify-center py-10 ">
         <button onClick={ handleDataLoader } className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white ">
           View All Jobs
         </button>

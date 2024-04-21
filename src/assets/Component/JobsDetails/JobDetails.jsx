@@ -20,7 +20,6 @@ const JobDetails = () => {
   const [cakri, setCakri] = useState([]);
   const [employ, setEmploy] = useState({});
 
-
 //   const handleApplyJobs = () => {
 //         const test = setApplyJob( id );
 
@@ -28,8 +27,6 @@ const JobDetails = () => {
 
 //         toast("You Have Applied Successfully!");
 //   }
-
-
 
 const handleApplyJobs = () => {
     const parId = parseInt(id)
@@ -45,10 +42,6 @@ const handleApplyJobs = () => {
         toast("Job already applied!");
     }
 }
-
-
-
-
 
   useEffect(() => {
     fetch(

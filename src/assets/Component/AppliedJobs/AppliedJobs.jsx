@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 // import { setApplyJob } from "../ApplyJobsStored/ApplyJobStored";
+import { MdArrowDropDown } from "react-icons/md";
 
 const AppliedJobs = () => {
 
@@ -53,8 +54,6 @@ const AppliedJobs = () => {
 
     // console.log( Array.isArray(jobs), "paici", jobs);
 
-    
-
     // useEffect(()=>{
 
     //     const job = jobs.filter(job => job.id === id )
@@ -66,8 +65,8 @@ const AppliedJobs = () => {
             <h1 className="py-10 text-center font-bold text-2xl"> You have Applied Already </h1>
             
             <div>
-            <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn m-1">Click</div>
+            <div className="dropdown ">
+                <div tabIndex={0} role="button" className="btn m-1">Filter Jobs <MdArrowDropDown /> </div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                     <li onClick={ () => handleFiter( "all" ) } ><a>All</a></li>
                     <li onClick={ () => handleFiter( "remote" ) } ><a> Remote </a></li>
@@ -85,6 +84,7 @@ const AppliedJobs = () => {
                             <h2 className="text-xl"> {job?.remote_or_onsite} </h2>
                             <h2 className="text-xl"> {job?.company_name} </h2>
                             <h2 className="text-xl"> {job?.location} </h2>
+                            <button className="btn btn-primary"> View Details </button>
                         </div>
                     </div>
                  ) )

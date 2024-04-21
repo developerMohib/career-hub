@@ -22,7 +22,7 @@ const JobsCategory = () => {
       </div>
 
       <div className="md:grid grid-cols-4 gap-5 ">
-        {jobs.map((job) => ( 
+        {jobs?.map((job) => ( 
           <div key={job.id} className="card bg-neutral text-neutral-content my-5">
             <p> { job.logo } </p>
           <div className="card-body items-center text-center">
